@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_speed"
+        android:enabled="true"
+        android:icon="@drawable/ic_speedometer"
+        android:title=""/>
+    <item
+        android:id="@+id/page_fuel"
+        android:enabled="true"
+        android:icon="@drawable/ic_gas_station"
+        android:title=""/>
+    <item
+        android:id="@+id/page_carinfo"
+        android:enabled="true"
+        android:icon="@drawable/ic_sports_car"
+        android:title=""/>
+</menu>

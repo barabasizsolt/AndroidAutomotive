@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.PolestarInfo" parent="android:Theme.Material.Light.DarkActionBar" />
+</resources>
