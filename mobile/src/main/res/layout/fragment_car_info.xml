@@ -47,64 +47,10 @@
             android:text="Car Sensors" />
     </com.google.android.material.tabs.TabLayout>
 
-    <!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/car_info"-->
-<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--        android:layout_width="220dp"-->
-<!--        android:layout_height="110dp"-->
-<!--        android:layout_marginStart="180dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Car info"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="#f5f5f5"-->
-<!--        android:textSize="35sp"-->
-<!--        app:cornerRadius="20dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.729"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.634"-->
-<!--        app:strokeColor="#f5f5f5"-->
-<!--        app:strokeWidth="2dp" />-->
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/car_sensors"-->
-<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--        android:layout_width="220dp"-->
-<!--        android:layout_height="110dp"-->
-<!--        android:layout_marginStart="600dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Sensors"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="#f5f5f5"-->
-<!--        android:textSize="35sp"-->
-<!--        app:cornerRadius="20dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.25"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.635"-->
-<!--        app:strokeColor="#f5f5f5"-->
-<!--        app:strokeWidth="2dp" />-->
-
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="750dp"-->
-<!--        android:layout_height="550dp"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="200dp"-->
-<!--        android:layout_marginTop="200dp"-->
-<!--        android:layout_marginEnd="200dp"-->
-<!--        android:src="@drawable/polestar_2_front_view"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.92" />-->
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/car_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="830dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 </LinearLayout>

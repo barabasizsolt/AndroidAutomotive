@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#323232"
+    tools:context=".fragments.CarInfoTabFragment">
+
+    <TextView
+        android:id="@+id/make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make"
+        android:textColor="#f5f5f5"
+        android:textSize="35sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <TextView
+        android:id="@+id/model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Model"
+        android:textColor="#f5f5f5"
+        android:textSize="35sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <TextView
+        android:id="@+id/model_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Model Year"
+        android:textColor="#f5f5f5"
+        android:textSize="35sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <TextView
+        android:id="@+id/driver_seat_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver Seat Location"
+        android:textColor="#f5f5f5"
+        android:textSize="35sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <TextView
+        android:id="@+id/fuel_door_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fuel door location"
+        android:textColor="#f5f5f5"
+        android:textSize="35sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+</LinearLayout>

@@ -43,6 +43,27 @@ object Constant {
         12 to "Other"
     )
 
+    val seatLocations = mapOf(
+        0 to "Seat unknown",
+        1 to "Row 1 left side seat",
+        2 to "Row 1 center seat",
+        4 to "Row 1 right side seat",
+        16 to "Row 2 left side seat",
+        32 to "Row 2 center seat",
+        64 to "Row 2 right side seat",
+        256 to "Row 3 left side seat",
+        1024 to "Row 3 right side seat"
+    )
+
+    val fuelDoorLocations = mapOf(
+        1 to "Front Left",
+        2 to "Front right",
+        3 to "Rear right",
+        4 to "Rear left",
+        5 to "Front",
+        6 to "Rear"
+    )
+
     const val KM_MULTIPLIER = 3.59999987F
     const val MAX_WH = 150000.000F
     const val WH_TO_KWH = 1000
