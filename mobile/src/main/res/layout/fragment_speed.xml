@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="-270dp"
+        android:layout_marginBottom="130dp"
         app:borderColor="#402c47"
         app:borderSize="8dp"
         app:fillColor="#d83a78"
@@ -37,22 +37,20 @@
         android:id="@+id/low_fuel"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="320dp"
         android:layout_marginStart="720dp"
-        android:visibility="invisible"
-        android:src="@drawable/ic_fuel_low" />
+        android:layout_marginTop="330dp"
+        android:src="@drawable/ic_fuel_low"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/gear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gear"
+        android:layout_marginTop="730dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/speedometer"
-        android:layout_marginBottom="50dp"
-        android:textColor="#f5f5f5"
+        android:text="Gear"
         android:textAlignment="center"
+        android:textColor="#f5f5f5"
         android:textSize="50sp" />
 
 </RelativeLayout>

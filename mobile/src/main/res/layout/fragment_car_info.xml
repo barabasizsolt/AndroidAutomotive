@@ -1,19 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#151515"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".fragments.CarInfoFragment">
 
     <ImageView
-        android:layout_width="900dp"
-        android:layout_height="700dp"
+        android:id="@+id/polestar2"
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="280dp"
         android:src="@drawable/polestar_2_side_view"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:tabMinWidth="460dp"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabMode="fixed">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/ic_information"
+            android:text="Car info" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_microchip"
+            android:text="Car Sensors" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/car_info"-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:layout_marginStart="180dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Car info"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#f5f5f5"-->
+<!--        android:textSize="35sp"-->
+<!--        app:cornerRadius="20dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.729"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.634"-->
+<!--        app:strokeColor="#f5f5f5"-->
+<!--        app:strokeWidth="2dp" />-->
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/car_sensors"-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:layout_marginStart="600dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Sensors"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#f5f5f5"-->
+<!--        android:textSize="35sp"-->
+<!--        app:cornerRadius="20dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.25"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.635"-->
+<!--        app:strokeColor="#f5f5f5"-->
+<!--        app:strokeWidth="2dp" />-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="750dp"-->
+<!--        android:layout_height="550dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="200dp"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:layout_marginEnd="200dp"-->
+<!--        android:src="@drawable/polestar_2_front_view"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.92" />-->
+
+</LinearLayout>
