@@ -1,17 +1,11 @@
 package com.example.polestarinfo.fragments
 
-import android.car.hardware.property.CarPropertyManager
-import android.content.Context
-import android.hardware.Sensor
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.polestarinfo.R
-import android.hardware.SensorManager
-import android.util.Log
-import com.example.polestarinfo.MainActivity
 import com.google.android.material.tabs.TabLayout
 
 class CarInfoFragment : Fragment() {
@@ -36,8 +30,7 @@ class CarInfoFragment : Fragment() {
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                Log.d("TAB", tab!!.position.toString())
-                when(tab.position){
+                when(tab!!.position){
                     0 -> replaceFragment(CarInfoTabFragment())
                     1 -> replaceFragment(CarSensorsTabFragment())
                 }
@@ -46,10 +39,6 @@ class CarInfoFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
         })
-
-        val sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        val deviceSensors: List<Sensor> = sensorManager.getSensorList(Sensor.TYPE_ALL)
-        Log.d("Sensors", deviceSensors.toString())
 
         return view
     }

@@ -36,6 +36,12 @@ android {
 }
 
 dependencies {
+    //Card view dependency
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Recyclerview dependency
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
     //Speedometer dependency
     implementation 'com.github.ibrahimsn98:speedometer:1.0.1'
 

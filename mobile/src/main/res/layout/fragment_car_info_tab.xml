@@ -7,7 +7,7 @@
     android:layout_height="400dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#323232"
+    android:background="#222222"
     tools:context=".fragments.CarInfoTabFragment">
 
     <TextView

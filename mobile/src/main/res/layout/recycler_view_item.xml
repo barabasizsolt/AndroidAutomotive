@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="105dp"
+    android:layout_margin="12dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#525252"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sensor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor name: "
+            android:textColor="#f5f5f5"
+            android:layout_marginTop="8dp"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/vendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vendor: "
+            android:textColor="#f5f5f5"
+            android:layout_marginTop="8dp"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
