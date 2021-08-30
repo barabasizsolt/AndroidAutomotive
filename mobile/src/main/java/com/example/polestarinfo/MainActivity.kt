@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         initCar()
         initBottomNavigation()
-        replaceFragment(SpeedFragment())
+        replaceFragment(SpeedFragment(), R.id.fragment_container)
     }
 
     override fun onResume() {
@@ -73,15 +73,15 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnItemSelectedListener {item ->
             when(item.itemId) {
                 R.id.page_speed -> {
-                    replaceFragment(SpeedFragment())
+                    replaceFragment(SpeedFragment(), R.id.fragment_container)
                     true
                 }
                 R.id.page_fuel -> {
-                    replaceFragment(FuelFragment())
+                    replaceFragment(FuelFragment(), R.id.fragment_container)
                     true
                 }
                 R.id.page_carinfo -> {
-                    replaceFragment(CarInfoFragment())
+                    replaceFragment(CarInfoFragment(), R.id.fragment_container)
                     true
                 }
                 else -> false
@@ -89,9 +89,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment,  addToBackStack:Boolean = false){
+    fun replaceFragment(fragment: Fragment, containerId: Int, addToBackStack:Boolean = false){
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
+        transaction.replace(containerId, fragment)
         when(addToBackStack){
             true -> {
                 transaction.addToBackStack(null)

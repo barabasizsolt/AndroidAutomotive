@@ -1,6 +1,8 @@
 package com.example.polestarinfo.constants
 
 import android.car.Car
+import androidx.fragment.app.Fragment
+import com.example.polestarinfo.R
 
 object Constant {
     val permissions = arrayOf(

@@ -1,7 +1,6 @@
 package com.example.polestarinfo.adapters
 
 import android.hardware.Sensor
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.dialog.MaterialDialogs
 
 class SensorAdapter (private val mList: List<Sensor>) : RecyclerView.Adapter<SensorAdapter.ViewHolder>() {
 

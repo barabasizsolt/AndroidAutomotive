@@ -1,5 +1,6 @@
 package com.example.polestarinfo.fragments
 
+import android.app.AlertDialog
 import android.car.VehiclePropertyIds
 import android.car.hardware.CarPropertyValue
 import android.car.hardware.property.CarPropertyManager
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.polestarinfo.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
@@ -24,6 +26,7 @@ class SpeedFragment : Fragment() {
     private lateinit var gear: TextView
     private lateinit var parkingBrake: ImageView
     private lateinit var lowFuel: ImageView
+    private lateinit var chargeMessage: TextView
 
     private var prevSpeed:Float = 0.0F
 
@@ -41,6 +44,7 @@ class SpeedFragment : Fragment() {
         gear.text = Constant.gearList[ mCarPropertyManager.getIntProperty(VehiclePropertyIds.GEAR_SELECTION, 0)]
         parkingBrake = view.findViewById(R.id.parking_brake)
         lowFuel = view.findViewById(R.id.low_fuel)
+        chargeMessage = view.findViewById(R.id.charging_message)
         registerCarPropertyCallback()
 
         return view
@@ -79,6 +83,11 @@ class SpeedFragment : Fragment() {
             VehiclePropertyIds.FUEL_LEVEL_LOW,
             CarPropertyManager.SENSOR_RATE_FASTEST
         )
+        mCarPropertyManager.registerCallback(
+            energyPortConnectedCallback,
+            VehiclePropertyIds.EV_CHARGE_PORT_CONNECTED,
+            CarPropertyManager.SENSOR_RATE_FASTEST
+        )
     }
 
     private fun unregisterCarPropertyCallback() {
@@ -86,6 +95,23 @@ class SpeedFragment : Fragment() {
         mCarPropertyManager.unregisterCallback(gearCallback)
         mCarPropertyManager.unregisterCallback(parkingBrakeCallback)
         mCarPropertyManager.unregisterCallback(lowFuelCallback)
+        mCarPropertyManager.unregisterCallback(energyPortConnectedCallback)
+    }
+
+    private fun isCharging(value: Boolean){
+        when(value){
+            true -> {
+                speedometer.visibility = View.INVISIBLE
+                gear.visibility = View.INVISIBLE
+                chargeMessage.visibility = View.VISIBLE
+                Toast.makeText(requireContext(), "Charging!", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                speedometer.visibility = View.VISIBLE
+                gear.visibility = View.VISIBLE
+                chargeMessage.visibility = View.INVISIBLE
+            }
+        }
     }
 
     private val speedCallback = object :  CarPropertyManager.CarPropertyEventCallback {
@@ -137,6 +163,16 @@ class SpeedFragment : Fragment() {
 
         override fun onErrorEvent(i: Int, i1: Int) {
             Log.e(ContentValues.TAG, "CarPropertyManager.onParkingBrakeChangedError")
+        }
+    }
+
+    private val energyPortConnectedCallback = object : CarPropertyManager.CarPropertyEventCallback {
+        override fun onChangeEvent(carPropertyValue: CarPropertyValue<*>) {
+            isCharging(carPropertyValue.value as Boolean)
+        }
+
+        override fun onErrorEvent(i: Int, i1: Int) {
+            Log.e(ContentValues.TAG, "CarPropertyManager.onEnergyPortConnectedError")
         }
     }
 }

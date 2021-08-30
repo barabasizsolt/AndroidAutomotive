@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.polestarinfo.MainActivity
 import com.example.polestarinfo.R
 import com.google.android.material.tabs.TabLayout
 
@@ -31,8 +32,8 @@ class CarInfoFragment : Fragment() {
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab!!.position){
-                    0 -> replaceFragment(CarInfoTabFragment())
-                    1 -> replaceFragment(CarSensorsTabFragment())
+                    0 -> (activity as MainActivity).replaceFragment(CarInfoTabFragment(), R.id.car_fragment_container)
+                    1 -> (activity as MainActivity).replaceFragment(CarSensorsTabFragment(), R.id.car_fragment_container)
                 }
             }
 
@@ -41,16 +42,5 @@ class CarInfoFragment : Fragment() {
         })
 
         return view
-    }
-
-    private fun replaceFragment(fragment: Fragment,  addToBackStack:Boolean = false){
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.car_fragment_container, fragment)
-        when(addToBackStack){
-            true -> {
-                transaction.addToBackStack(null)
-            }
-        }
-        transaction.commit()
     }
 }

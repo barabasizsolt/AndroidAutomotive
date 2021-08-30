@@ -8,6 +8,19 @@
     android:background="#151515"
     tools:context=".fragments.SpeedFragment">
 
+    <TextView
+        android:id="@+id/charging_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f5f5f5"
+        android:textAlignment="center"
+        android:text="Speedometer is not available"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:visibility="invisible"
+        android:textSize="45sp"
+        />
+
     <me.ibrahimsn.lib.Speedometer
         android:id="@+id/speedometer"
         android:layout_width="match_parent"
@@ -17,7 +30,7 @@
         android:layout_marginBottom="130dp"
         app:borderColor="#402c47"
         app:borderSize="8dp"
-        app:fillColor="#d83a78"
+        app:fillColor="#AD1D45"
         app:layout_constraintTop_toTopOf="parent"
         app:maxSpeed="250"
         app:metricText="km/h"
