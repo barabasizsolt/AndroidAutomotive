@@ -136,7 +136,7 @@ class FuelFragment : Fragment() {
                 polestar.setImageResource(R.drawable.polestar2_top_view)
                 batteryIcon.setImageResource(R.drawable.ic_baseline_battery_full_24)
                 odometerAndChargeHeader.text = ODOMETER
-                // TODO: Odometer is not available.
+                // NOTE: Odometer is not available.
                 odometerAndCharge.text = ODOMETER_DEFAULT_VAL
                 if(wasCharging) {
                     Toast.makeText(requireContext(), "Charging finished!", Toast.LENGTH_SHORT)
@@ -194,7 +194,7 @@ class FuelFragment : Fragment() {
         }
     }
 
-    //TODO: Odometer is missing, can not be accessed in Car API.
+    //NOTE: Odometer is missing, can not be accessed in Car API.
 
     private val temperatureCallback = object :  CarPropertyManager.CarPropertyEventCallback {
         override fun onChangeEvent(carPropertyValue: CarPropertyValue<*>) {
