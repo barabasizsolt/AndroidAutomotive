@@ -72,4 +72,6 @@ object Constant {
     const val ODOMETER = "Odometer"
     const val CHARGE = "Charge rate"
     const val ODOMETER_DEFAULT_VAL = "5000 km"
+    const val DIALOG_WIDTH = 900
+    const val DIALOG_HEIGHT = 800
 }
