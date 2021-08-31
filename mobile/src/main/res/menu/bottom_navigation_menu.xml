@@ -14,4 +14,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_sports_car"
         android:title=""/>
+    <item
+        android:id="@+id/page_benchmark"
+        android:enabled="true"
+        android:icon="@drawable/ic_bar_chart"
+        android:title=""/>
 </menu>

@@ -18,12 +18,18 @@
     <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
         <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
     </style>
     <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked">
         <item name="android:textSize">55sp</item>
     </style>
     <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
         <item name="android:textSize">35sp</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#d81b60</item>
+        <item name="android:textSize">35sp</item>
+        <item name="rippleColor">#ad1457</item>
     </style>
 
 </resources>

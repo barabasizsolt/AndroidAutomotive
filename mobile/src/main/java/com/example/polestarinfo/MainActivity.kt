@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.polestarinfo.constants.Constant.permissions
+import com.example.polestarinfo.fragments.BenchmarkFragment
 import com.example.polestarinfo.fragments.CarInfoFragment
 import com.example.polestarinfo.fragments.FuelFragment
 import com.example.polestarinfo.fragments.SpeedFragment
@@ -82,6 +83,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.page_carinfo -> {
                     replaceFragment(CarInfoFragment(), R.id.fragment_container)
+                    true
+                }
+                R.id.page_benchmark -> {
+                    replaceFragment(BenchmarkFragment(), R.id.fragment_container)
                     true
                 }
                 else -> false
