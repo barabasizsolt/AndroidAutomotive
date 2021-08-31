@@ -20,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.*
 import java.time.Instant
 import java.time.format.DateTimeFormatter
+import kotlin.system.measureTimeMillis
 
 class BenchmarkTabFragment : Fragment() {
     private lateinit var idText: TextView
@@ -30,6 +31,7 @@ class BenchmarkTabFragment : Fragment() {
     private lateinit var benchmarkButton: Button
 
     private lateinit var benchmark: Job
+    private lateinit var runningComputation: Job
     private lateinit var dialog: AlertDialog
 
     override fun onCreateView(
@@ -71,9 +73,9 @@ class BenchmarkTabFragment : Fragment() {
             .setPositiveButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
                 benchmark.cancel()
+                runningComputation.cancel()
             }
             .create()
-
 
         benchmarkButton.setOnClickListener {
             benchmark = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main){
@@ -91,36 +93,20 @@ class BenchmarkTabFragment : Fragment() {
     }
 
     private suspend fun compute(): Score {
-        val startTime = System.currentTimeMillis()
-
-        val job1 = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
-            Benchmark.primalityTest()
+        val duration = measureTimeMillis {
+            runningComputation = CoroutineScope(Dispatchers.Default).launch {
+                Benchmark.primalityTest()
+                Log.d("Job1", "primality test done")
+                Benchmark.factorialCalculation()
+                Log.d("Job2", "factorial calculation done")
+                Benchmark.sorting()
+                Log.d("Job3", "list sorting done")
+                Benchmark.matrixMultiplication()
+                Log.d("Job4", "matrix multiplication done")
+            }
+            runningComputation.join()
         }
-        job1.join()
-        Log.d("Job1", "primality test done")
 
-        val job2 = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
-            Benchmark.factorialCalculation()
-        }
-        job2.join()
-        Log.d("Job2", "factorial calculation done")
-
-        val job3 = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
-            Benchmark.sorting()
-        }
-        job3.join()
-        Log.d("Job3", "list sorting done")
-
-        val job4 = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
-            Benchmark.matrixMultiplication()
-        }
-        job4.join()
-        Log.d("Job4", "matrix multiplication done")
-
-        val endTime = System.currentTimeMillis()
-        val currentScore = endTime - startTime
-        val scoreName = DateTimeFormatter.ISO_INSTANT.format(Instant.now())
-
-        return Score(currentScore, scoreName)
+        return Score(duration, DateTimeFormatter.ISO_INSTANT.format(Instant.now()))
     }
 }
