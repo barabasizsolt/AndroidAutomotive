@@ -73,9 +73,11 @@ object Constant {
     const val CHARGE = "Charge rate"
     const val ODOMETER_DEFAULT_VAL = "5000 km"
     const val DIALOG_WIDTH = 900
-    const val DIALOG_HEIGHT = 800
+    const val DIALOG_HEIGHT = 820
     const val BENCHMARK_DIALOG_WIDTH = 900
     const val BENCHMARK_DIALOG_HEIGHT = 600
+    const val BENCHMARK_RESULT_DIALOG_WIDTH = 900
+    const val BENCHMARK_RESULT_DIALOG_HEIGHT = 700
     const val job1Message = "Running primality test..."
     const val job2Message = "Running factorial calculation..."
     const val job3Message = "Running list sorting..."

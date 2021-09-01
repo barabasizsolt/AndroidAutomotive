@@ -5,6 +5,7 @@ import android.car.hardware.property.CarPropertyManager
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.polestarinfo.cache.Cache
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         scoreViewModel.readAllScore.observe(this, {scores ->
             Cache.setCache(scores)
         })
+
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         initCar()
         initBottomNavigation()

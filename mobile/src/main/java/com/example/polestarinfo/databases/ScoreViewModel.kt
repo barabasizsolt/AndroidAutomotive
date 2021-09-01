@@ -23,4 +23,10 @@ class ScoreViewModel(application: Application) : AndroidViewModel(application){
             repository.insertScore(score)
         }
     }
+
+    fun deleteScore(name: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteScore(name)
+        }
+    }
 }

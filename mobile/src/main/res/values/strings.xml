@@ -5,4 +5,6 @@
     <string name="sensor_title">Sensor details</string>
     <string name="benchmark_dialog_title">Benchmarking</string>
     <string name="benchmark_dialog_positive_button">Cancel</string>
+    <string name="benchmark_result_dialog_title">Benchmark results</string>
+    <string name="benchmark_result_dialog_positive_button">Dismiss</string>
 </resources>

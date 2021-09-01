@@ -1,7 +1,5 @@
 package com.example.polestarinfo.adapters
 
-import android.hardware.Sensor
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,53 +7,49 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
+import com.example.polestarinfo.model.Score
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class SensorAdapter (private val mList: List<Sensor>) : RecyclerView.Adapter<SensorAdapter.ViewHolder>() {
+class BenchmarkAdapter (private val mList: List<Score>) : RecyclerView.Adapter<BenchmarkAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_view_item, parent, false)
-
-        val viewHolder = ViewHolder(view)
-        viewHolder.listen { position, _ ->
+            .inflate(R.layout.benchmark_result_recycler_view_item, parent, false)
+        return ViewHolder(view).listen { position, _ ->
             val item = mList[position]
 
             //Alert dialog.
-            val name = item.name
-            val vendor = "Vendor: " + item.vendor
-            val version = "Version:" + item.version
-            val type = "Type: " + item.type
-            val maxRange = "Maximum range: " + item.maximumRange
-            val res = "Resolution: " + item.resolution
-            val power = "Power: " + item.power
-            val minDelay = "Minimum delay: " + item.minDelay
+            val totalScore = "Total score: " + item.score
+            val benchmarkTime = item.name
+            val primalityScore = "Primality test score: " + item.primalityScore
+            val factorialScore = "Factorial calculation score: " + item.factorialScore
+            val sortingScore = "List sorting score: " + item.sortingScore
+            val matrixScore = "Matrix multiplication score: " + item.matrixScore
 
-            val items = arrayOf(name, vendor, version, type, maxRange, res, power, minDelay)
+            val items = arrayOf(benchmarkTime, totalScore, primalityScore, factorialScore, sortingScore, matrixScore)
             MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
-                .setTitle(R.string.sensor_title)
+                .setTitle(R.string.benchmark_result_dialog_title)
                 .setItems(items) { _, _ -> }
                 .setPositiveButton(R.string.benchmark_result_dialog_positive_button) { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
-                .window!!.setLayout(Constant.DIALOG_WIDTH, Constant.DIALOG_HEIGHT)
+                .window!!.setLayout(Constant.BENCHMARK_RESULT_DIALOG_WIDTH, Constant.BENCHMARK_RESULT_DIALOG_HEIGHT)
         }
-
-        return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemsViewModel = mList[position]
-        holder.sensorName.text = itemsViewModel.name
-        holder.vendor.text = itemsViewModel.vendor
+        val totalScore = "Total score: " + itemsViewModel.score.toString()
+        holder.benchmarkScore.text = totalScore
+        holder.benchmarkName.text = itemsViewModel.name
     }
 
     override fun getItemCount(): Int = mList.size
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val sensorName: TextView = itemView.findViewById(R.id.sensor_name)
-        val vendor: TextView = itemView.findViewById(R.id.vendor)
+        val benchmarkScore: TextView = itemView.findViewById(R.id.benchmark_score)
+        val benchmarkName: TextView = itemView.findViewById(R.id.benchmark_name)
     }
 
     //Extension function to set the onClickListener.

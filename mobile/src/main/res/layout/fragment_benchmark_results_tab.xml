@@ -5,13 +5,15 @@
     android:layout_height="700dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#00ff00"
+    android:background="#222222"
     tools:context=".fragments.BenchmarkResultsTabFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="BenchmarkResults Fragment" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/benchmark_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="5dp"
+        tools:listitem="@layout/benchmark_result_recycler_view_item" />
 
 </LinearLayout>

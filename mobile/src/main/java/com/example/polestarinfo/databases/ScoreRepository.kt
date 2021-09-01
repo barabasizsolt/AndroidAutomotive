@@ -9,4 +9,8 @@ class ScoreRepository(private val scoreDao: ScoreDao) {
     suspend fun insertScore(score: Score){
         scoreDao.insertScore(score)
     }
+
+    suspend fun deleteScore(name: String){
+        scoreDao.deleteScore(name)
+    }
 }

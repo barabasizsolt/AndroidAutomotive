@@ -108,36 +108,49 @@ class BenchmarkTabFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private suspend fun compute(): Score {
-        val duration = measureTimeMillis {
-            runningComputation = CoroutineScope(Dispatchers.Default).launch {
-                progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                    progressBarInfo.text = Constant.job1Message
-                }
-                Benchmark.primalityTest()
-                Log.d("Job1", "primality test done")
+        var time1 = 0L
+        var time2 = 0L
+        var time3 = 0L
+        var time4 = 0L
 
-                progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                    progressBarInfo.text = Constant.job2Message
-                }
-                Benchmark.factorialCalculation()
-                Log.d("Job2", "factorial calculation done")
-
-                progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                    progressBarInfo.text = Constant.job3Message
-                }
-                Benchmark.sorting()
-                Log.d("Job3", "list sorting done")
-
-                progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                    progressBarInfo.text = Constant.job4Message
-                }
-                Benchmark.matrixMultiplication()
-                Log.d("Job4", "matrix multiplication done")
+        runningComputation = CoroutineScope(Dispatchers.Default).launch {
+            progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                progressBarInfo.text = Constant.job1Message
             }
-            runningComputation.join()
+            time1 = measureTimeMillis {
+                Benchmark.primalityTest()
+            }
+            Log.d("Job1", "primality test done")
+            progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                progressBarInfo.text = Constant.job2Message
+            }
+            time2 = measureTimeMillis {
+                Benchmark.factorialCalculation()
+            }
+            Log.d("Job2", "factorial calculation done")
+
+            progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                progressBarInfo.text = Constant.job3Message
+            }
+            time3 = measureTimeMillis {
+                Benchmark.sorting()
+            }
+            Log.d("Job3", "list sorting done")
+
+            progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                progressBarInfo.text = Constant.job4Message
+            }
+            time4 = measureTimeMillis {
+                Benchmark.matrixMultiplication()
+            }
+            Log.d("Job4", "matrix multiplication done")
         }
+        runningComputation.join()
 
         //TODO: formatter time bug.
-        return Score(duration, SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().time))
+        val duration = time1 + time2 + time3 + time4
+        return Score(duration,
+                    SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().time),
+                    time1, time2, time3, time4)
     }
 }
