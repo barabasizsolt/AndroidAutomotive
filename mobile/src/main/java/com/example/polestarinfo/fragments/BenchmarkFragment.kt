@@ -45,4 +45,6 @@ class BenchmarkFragment : Fragment() {
 
         return view
     }
+
+    fun getBenchmarkTabLayout() = tabLayout
 }

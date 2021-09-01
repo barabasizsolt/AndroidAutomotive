@@ -6,7 +6,10 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant.permissions
+import com.example.polestarinfo.databases.ScoreViewModel
 import com.example.polestarinfo.fragments.BenchmarkFragment
 import com.example.polestarinfo.fragments.CarInfoFragment
 import com.example.polestarinfo.fragments.FuelFragment
@@ -17,9 +20,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var car : Car
     private lateinit var mCarPropertyManager: CarPropertyManager
 
+    lateinit var scoreViewModel: ScoreViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //TODO: maybe add splash screen and do there
+        scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
+        scoreViewModel.readAllScore.observe(this, {scores ->
+            Cache.setCache(scores)
+        })
 
         initCar()
         initBottomNavigation()
@@ -107,4 +118,5 @@ class MainActivity : AppCompatActivity() {
 
     fun getCar() = car
     fun getCarPropertyManager() = mCarPropertyManager
+    fun getDatabase() = scoreViewModel
 }

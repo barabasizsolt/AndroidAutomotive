@@ -13,14 +13,16 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
+import com.example.polestarinfo.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.benchmark.Benchmark
+import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant
 import com.example.polestarinfo.model.Score
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.*
-import java.time.Instant
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.system.measureTimeMillis
 
 class BenchmarkTabFragment : Fragment() {
@@ -94,13 +96,17 @@ class BenchmarkTabFragment : Fragment() {
                 delay(1000)
                 dialog.dismiss()
 
-                Log.d("Score: ", score.toString())
-                //TODO: show results and save them into ROOM.
-                //TODO: recache.
+                (activity as MainActivity).getDatabase().insertScore(score)
+                (activity as MainActivity).getDatabase().readAllScore.observe(viewLifecycleOwner, {
+                    Cache.setCache(it)
+                })
+
+                //TODO: navigate to benchmarkResultsTabFragment.
             }
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     private suspend fun compute(): Score {
         val duration = measureTimeMillis {
             runningComputation = CoroutineScope(Dispatchers.Default).launch {
@@ -131,6 +137,7 @@ class BenchmarkTabFragment : Fragment() {
             runningComputation.join()
         }
 
-        return Score(duration, DateTimeFormatter.ISO_INSTANT.format(Instant.now()))
+        //TODO: formatter time bug.
+        return Score(duration, SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().time))
     }
 }
