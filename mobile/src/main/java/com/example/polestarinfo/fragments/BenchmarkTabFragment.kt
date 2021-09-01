@@ -1,6 +1,7 @@
 package com.example.polestarinfo.fragments
 
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -32,8 +33,13 @@ class BenchmarkTabFragment : Fragment() {
 
     private lateinit var benchmark: Job
     private lateinit var runningComputation: Job
+    private lateinit var progressMessage: Job
     private lateinit var dialog: AlertDialog
 
+    private lateinit var customDialogView: View
+    private lateinit var progressBarInfo: TextView
+
+    @SuppressLint("InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,6 +65,8 @@ class BenchmarkTabFragment : Fragment() {
         boardText.text = board
         hardwareText.text = hardware
 
+        customDialogView = inflater.inflate(R.layout.benchmark_custom_dialog_layout, null, false)
+        progressBarInfo = customDialogView.findViewById(R.id.progress_bar_info)
 
         return view
     }
@@ -67,20 +75,21 @@ class BenchmarkTabFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dialog = MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
-            .setTitle("Benchmarking")
-            .setMessage("Running....")
+            .setView(customDialogView)
+            .setTitle(R.string.benchmark_dialog_title)
             .setCancelable(false)
-            .setPositiveButton("Cancel") { dialog, _ ->
+            .setPositiveButton(R.string.benchmark_dialog_positive_button) { dialog, _ ->
                 dialog.dismiss()
                 benchmark.cancel()
                 runningComputation.cancel()
+                progressMessage.cancel()
             }
             .create()
 
         benchmarkButton.setOnClickListener {
             benchmark = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main){
                 dialog.show()
-                dialog.window!!.setLayout(Constant.DIALOG_WIDTH, 450)
+                dialog.window!!.setLayout(Constant.BENCHMARK_DIALOG_WIDTH, Constant.BENCHMARK_DIALOG_HEIGHT)
                 val score = compute()
                 delay(1000)
                 dialog.dismiss()
@@ -95,12 +104,27 @@ class BenchmarkTabFragment : Fragment() {
     private suspend fun compute(): Score {
         val duration = measureTimeMillis {
             runningComputation = CoroutineScope(Dispatchers.Default).launch {
+                progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                    progressBarInfo.text = Constant.job1Message
+                }
                 Benchmark.primalityTest()
                 Log.d("Job1", "primality test done")
+
+                progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                    progressBarInfo.text = Constant.job2Message
+                }
                 Benchmark.factorialCalculation()
                 Log.d("Job2", "factorial calculation done")
+
+                progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                    progressBarInfo.text = Constant.job3Message
+                }
                 Benchmark.sorting()
                 Log.d("Job3", "list sorting done")
+
+                progressMessage = CoroutineScope(Dispatchers.Main).launch {
+                    progressBarInfo.text = Constant.job4Message
+                }
                 Benchmark.matrixMultiplication()
                 Log.d("Job4", "matrix multiplication done")
             }
