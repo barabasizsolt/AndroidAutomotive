@@ -107,8 +107,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun replaceFragment(fragment: Fragment, containerId: Int, addToBackStack:Boolean = false){
+    fun replaceFragment(fragment: Fragment, containerId: Int, addToBackStack:Boolean = false, withAnimation:Boolean = true){
         val transaction = supportFragmentManager.beginTransaction()
+        when(withAnimation){
+            true -> {
+                transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+            }
+        }
         transaction.replace(containerId, fragment)
         when(addToBackStack){
             true -> {
