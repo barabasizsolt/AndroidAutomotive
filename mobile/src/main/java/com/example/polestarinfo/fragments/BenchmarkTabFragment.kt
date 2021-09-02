@@ -148,10 +148,8 @@ class BenchmarkTabFragment : Fragment() {
         }
         runningComputation.join()
 
-        //TODO: formatter time bug.
         val duration = time1 + time2 + time3 + time4
-        return Score(duration,
-                    SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().time),
-                    time1, time2, time3, time4)
+        val currentTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+        return Score(duration, currentTime, time1, time2, time3, time4)
     }
 }
