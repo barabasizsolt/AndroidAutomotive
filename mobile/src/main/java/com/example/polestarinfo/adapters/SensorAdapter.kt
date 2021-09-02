@@ -9,40 +9,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
+import com.example.polestarinfo.interfaces.OnItemClickListener
+import com.example.polestarinfo.interfaces.OnItemLongClickListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class SensorAdapter (private val mList: List<Sensor>) : RecyclerView.Adapter<SensorAdapter.ViewHolder>() {
+class SensorAdapter (private val mList: List<Sensor>, onItemClickListener: OnItemClickListener)
+    : RecyclerView.Adapter<SensorAdapter.ViewHolder>() {
+
+    private val mOnItemClickListener: OnItemClickListener = onItemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_view_item, parent, false)
 
-        val viewHolder = ViewHolder(view)
-        viewHolder.listen { position, _ ->
-            val item = mList[position]
-
-            //Alert dialog.
-            val name = item.name
-            val vendor = "Vendor: " + item.vendor
-            val version = "Version:" + item.version
-            val type = "Type: " + item.type
-            val maxRange = "Maximum range: " + item.maximumRange
-            val res = "Resolution: " + item.resolution
-            val power = "Power: " + item.power
-            val minDelay = "Minimum delay: " + item.minDelay
-
-            val items = arrayOf(name, vendor, version, type, maxRange, res, power, minDelay)
-            MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
-                .setTitle(R.string.sensor_title)
-                .setItems(items) { _, _ -> }
-                .setPositiveButton(R.string.benchmark_result_dialog_positive_button) { dialog, _ ->
-                    dialog.dismiss()
-                }
-                .show()
-                .window!!.setLayout(Constant.DIALOG_WIDTH, Constant.DIALOG_HEIGHT)
-        }
-
-        return viewHolder
+        return ViewHolder(view, mOnItemClickListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -53,16 +33,19 @@ class SensorAdapter (private val mList: List<Sensor>) : RecyclerView.Adapter<Sen
 
     override fun getItemCount(): Int = mList.size
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(itemView: View, onItemClickListener: OnItemClickListener)
+        : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+
         val sensorName: TextView = itemView.findViewById(R.id.sensor_name)
         val vendor: TextView = itemView.findViewById(R.id.vendor)
-    }
+        private val mOnItemClickListener: OnItemClickListener = onItemClickListener
 
-    //Extension function to set the onClickListener.
-    private fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
-        itemView.setOnClickListener {
-            event.invoke(bindingAdapterPosition, itemViewType)
+        override fun onClick(view: View) {
+            mOnItemClickListener.onItemClick(bindingAdapterPosition)
         }
-        return this
+
+        init {
+            itemView.setOnClickListener(this)
+        }
     }
 }

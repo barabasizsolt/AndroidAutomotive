@@ -36,7 +36,7 @@ class BenchmarkTabFragment : Fragment() {
     private lateinit var benchmark: Job
     private lateinit var runningComputation: Job
     private lateinit var progressMessage: Job
-    private lateinit var dialog: AlertDialog
+    private lateinit var benchmarkDialog: AlertDialog
 
     private lateinit var customDialogView: View
     private lateinit var progressBarInfo: TextView
@@ -76,7 +76,8 @@ class BenchmarkTabFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dialog = MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
+        //Benchmark dialog
+        benchmarkDialog = MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
             .setView(customDialogView)
             .setTitle(R.string.benchmark_dialog_title)
             .setCancelable(false)
@@ -90,18 +91,18 @@ class BenchmarkTabFragment : Fragment() {
 
         benchmarkButton.setOnClickListener {
             benchmark = viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main){
-                dialog.show()
-                dialog.window!!.setLayout(Constant.BENCHMARK_DIALOG_WIDTH, Constant.BENCHMARK_DIALOG_HEIGHT)
+                benchmarkDialog.show()
+                benchmarkDialog.window!!.setLayout(Constant.BENCHMARK_DIALOG_WIDTH, Constant.BENCHMARK_DIALOG_HEIGHT)
                 val score = compute()
                 delay(1000)
-                dialog.dismiss()
+                benchmarkDialog.dismiss()
 
                 (activity as MainActivity).getDatabase().insertScore(score)
                 (activity as MainActivity).getDatabase().readAllScore.observe(viewLifecycleOwner, {
                     Cache.setCache(it)
                 })
 
-                //TODO: navigate to benchmarkResultsTabFragment.
+                Constant.showResultDialog(score, view.context)
             }
         }
     }

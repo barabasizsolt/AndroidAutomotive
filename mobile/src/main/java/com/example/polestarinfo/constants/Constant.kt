@@ -1,6 +1,11 @@
 package com.example.polestarinfo.constants
 
 import android.car.Car
+import android.content.Context
+import android.hardware.Sensor
+import com.example.polestarinfo.R
+import com.example.polestarinfo.model.Score
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 object Constant {
     val permissions = arrayOf(
@@ -72,14 +77,56 @@ object Constant {
     const val ODOMETER = "Odometer"
     const val CHARGE = "Charge rate"
     const val ODOMETER_DEFAULT_VAL = "5000 km"
-    const val DIALOG_WIDTH = 900
-    const val DIALOG_HEIGHT = 820
+    private const val SENSOR_DIALOG_WIDTH = 900
+    private const val SENSOR_DIALOG_HEIGHT = 820
     const val BENCHMARK_DIALOG_WIDTH = 900
     const val BENCHMARK_DIALOG_HEIGHT = 600
-    const val BENCHMARK_RESULT_DIALOG_WIDTH = 900
-    const val BENCHMARK_RESULT_DIALOG_HEIGHT = 700
+    private const val BENCHMARK_RESULT_DIALOG_WIDTH = 900
+    private const val BENCHMARK_RESULT_DIALOG_HEIGHT = 700
+    const val DELETE_DIALOG_WIDTH = 900
+    const val DELETE_DIALOG_HEIGHT = 350
     const val job1Message = "Running primality test..."
     const val job2Message = "Running factorial calculation..."
     const val job3Message = "Running list sorting..."
     const val job4Message = "Running matrix multiplication..."
+
+    fun showResultDialog(score: Score, context: Context){
+        val totalScore = "Total time: " + score.score + " ms"
+        val benchmarkTime = score.name
+        val primalityScore = "Primality test time: " + score.primalityScore + " ms"
+        val factorialScore = "Factorial calculation time: " + score.factorialScore + " ms"
+        val sortingScore = "List sorting time: " + score.sortingScore + " ms"
+        val matrixScore = "Matrix multiplication time: " + score.matrixScore + " ms"
+
+        val items = arrayOf(benchmarkTime, totalScore, primalityScore, factorialScore, sortingScore, matrixScore)
+        MaterialAlertDialogBuilder(context, R.style.AlertDialogTheme)
+            .setTitle(R.string.benchmark_result_dialog_title)
+            .setItems(items) { _, _ -> }
+            .setPositiveButton(R.string.benchmark_result_dialog_positive_button) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+            .window!!.setLayout(BENCHMARK_RESULT_DIALOG_WIDTH, BENCHMARK_RESULT_DIALOG_HEIGHT)
+    }
+
+    fun showSensorDetailsDialog(sensor: Sensor, context: Context){
+        val name = sensor.name
+        val vendor = "Vendor: " + sensor.vendor
+        val version = "Version:" + sensor.version
+        val type = "Type: " + sensor.type
+        val maxRange = "Maximum range: " + sensor.maximumRange
+        val res = "Resolution: " + sensor.resolution
+        val power = "Power: " + sensor.power
+        val minDelay = "Minimum delay: " + sensor.minDelay
+
+        val items = arrayOf(name, vendor, version, type, maxRange, res, power, minDelay)
+        MaterialAlertDialogBuilder(context, R.style.AlertDialogTheme)
+            .setTitle(R.string.sensor_title)
+            .setItems(items) { _, _ -> }
+            .setPositiveButton(R.string.benchmark_result_dialog_positive_button) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+            .window!!.setLayout(Constant.SENSOR_DIALOG_WIDTH, Constant.SENSOR_DIALOG_HEIGHT)
+    }
 }
