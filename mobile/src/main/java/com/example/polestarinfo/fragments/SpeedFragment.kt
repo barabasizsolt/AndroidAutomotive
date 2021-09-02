@@ -1,6 +1,5 @@
 package com.example.polestarinfo.fragments
 
-import android.app.AlertDialog
 import android.car.VehiclePropertyIds
 import android.car.hardware.CarPropertyValue
 import android.car.hardware.property.CarPropertyManager
@@ -14,7 +13,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.polestarinfo.MainActivity
+import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
 import me.ibrahimsn.lib.Speedometer

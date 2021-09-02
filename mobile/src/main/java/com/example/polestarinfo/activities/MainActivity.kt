@@ -1,4 +1,4 @@
-package com.example.polestarinfo
+package com.example.polestarinfo.activities
 
 import android.car.Car
 import android.car.hardware.property.CarPropertyManager
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.polestarinfo.R
 import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant.permissions
 import com.example.polestarinfo.databases.ScoreViewModel
@@ -27,12 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        //TODO: maybe add splash screen and do there
         scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
-        scoreViewModel.readAllScore.observe(this, {scores ->
-            Cache.setCache(scores)
-        })
 
         initCar()
         initBottomNavigation()

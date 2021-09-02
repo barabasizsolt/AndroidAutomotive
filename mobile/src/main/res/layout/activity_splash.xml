@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".activities.SplashActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="800dp"
+        android:layout_height="200dp"
+        android:src="@drawable/polestar_logo" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/polestar_icon" />
+
+</RelativeLayout>

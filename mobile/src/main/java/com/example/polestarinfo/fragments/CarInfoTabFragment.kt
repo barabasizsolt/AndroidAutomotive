@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.polestarinfo.MainActivity
+import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant.fuelDoorLocations
 import com.example.polestarinfo.constants.Constant.seatLocations

@@ -13,7 +13,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.polestarinfo.MainActivity
+import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
 import com.example.polestarinfo.constants.Constant.CHARGE

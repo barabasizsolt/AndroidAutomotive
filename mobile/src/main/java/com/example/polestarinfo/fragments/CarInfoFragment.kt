@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.polestarinfo.MainActivity
+import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.google.android.material.tabs.TabLayout
 

@@ -13,7 +13,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
-import com.example.polestarinfo.MainActivity
+import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.benchmark.Benchmark
 import com.example.polestarinfo.cache.Cache
