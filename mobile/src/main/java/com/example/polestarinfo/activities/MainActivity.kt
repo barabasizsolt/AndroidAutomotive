@@ -3,12 +3,14 @@ package com.example.polestarinfo.activities
 import android.car.Car
 import android.car.hardware.property.CarPropertyManager
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.polestarinfo.R
-import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant.permissions
 import com.example.polestarinfo.databases.ScoreViewModel
 import com.example.polestarinfo.fragments.BenchmarkFragment
@@ -16,8 +18,12 @@ import com.example.polestarinfo.fragments.CarInfoFragment
 import com.example.polestarinfo.fragments.FuelFragment
 import com.example.polestarinfo.fragments.SpeedFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+import androidx.appcompat.app.AppCompatDelegate
+
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var car : Car
     private lateinit var mCarPropertyManager: CarPropertyManager
 
@@ -27,9 +33,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
         supportActionBar?.setDisplayShowTitleEnabled(false)
         scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
 
+        checkUIMode()
         initCar()
         initBottomNavigation()
         replaceFragment(SpeedFragment(), R.id.fragment_container)
@@ -99,6 +108,21 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 else -> false
+            }
+        }
+    }
+
+    private fun checkUIMode(){
+
+        when (resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                Log.d("mode", "dark")
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                Log.d("mode", "light")
+            }
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
+                Log.d("mode", "undefined")
             }
         }
     }

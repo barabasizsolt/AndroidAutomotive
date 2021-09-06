@@ -164,7 +164,7 @@ class FuelFragment : Fragment() {
             val batteryLevel = calculateBatteryPercentage(carPropertyValue.value as Float)
             batteryPercentageValue = batteryLevel.roundToInt()
             checkBatteryStatus()
-            val batteryLevelText = batteryLevel.roundToInt().toString() + " %"
+            val batteryLevelText = batteryLevel.roundToInt().toString() + "%"
             batteryPercentage.text = batteryLevelText
         }
 
