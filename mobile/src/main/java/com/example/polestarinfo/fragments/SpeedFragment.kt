@@ -39,7 +39,6 @@ class SpeedFragment : Fragment() {
         prevSpeed = mCarPropertyManager.getFloatProperty(VehiclePropertyIds.PERF_VEHICLE_SPEED, 0)
         speedometer = view.findViewById(R.id.speedometer)
         gear = view.findViewById(R.id.gear)
-        // TODO: fix better
         gear.text = Constant.gearList[ mCarPropertyManager.getIntProperty(VehiclePropertyIds.GEAR_SELECTION, 0)]
         parkingBrake = view.findViewById(R.id.parking_brake)
         lowFuel = view.findViewById(R.id.low_fuel)
@@ -118,7 +117,7 @@ class SpeedFragment : Fragment() {
             val currentSpeed = ((carPropertyValue.value as Float) * Constant.KM_MULTIPLIER)
 
             if(prevSpeed != currentSpeed) {
-                speedometer.setSpeed(currentSpeed.roundToInt(), 0L)
+                speedometer.setSpeed(currentSpeed.toInt(), 0L)
                 prevSpeed = currentSpeed
             }
         }
