@@ -43,16 +43,16 @@ class SplashActivity : AppCompatActivity(), Animation.AnimationListener {
     }
 
     override fun onAnimationEnd(p0: Animation?) {
-        if(checkSelfPermission(Constant.permissions[0]) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(Constant.permissions[1]) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(Constant.permissions[2]) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(Constant.permissions[3]) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(Constant.permissions[4]) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(Constant.permissions[5]) == PackageManager.PERMISSION_GRANTED
-        ) {
+        var allGranted = true
+        for(i in 0..Constant.permissions.size){
+            if(checkSelfPermission(Constant.permissions[i]) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(Constant.permissions, 0)
+                allGranted = false
+                break
+            }
+        }
+        if(allGranted) {
             startActivity(Intent(this, MainActivity::class.java))
-        } else {
-            requestPermissions(Constant.permissions, 0)
         }
     }
 
