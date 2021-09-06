@@ -44,8 +44,8 @@ class SplashActivity : AppCompatActivity(), Animation.AnimationListener {
 
     override fun onAnimationEnd(p0: Animation?) {
         var allGranted = true
-        for(i in 0..Constant.permissions.size){
-            if(checkSelfPermission(Constant.permissions[i]) != PackageManager.PERMISSION_GRANTED){
+        for(element in Constant.permissions){
+            if(checkSelfPermission(element) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(Constant.permissions, 0)
                 allGranted = false
                 break
@@ -59,14 +59,15 @@ class SplashActivity : AppCompatActivity(), Animation.AnimationListener {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        if (permissions[0] == Car.PERMISSION_SPEED && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-            permissions[1] == Car.PERMISSION_ENERGY && grantResults[1] == PackageManager.PERMISSION_GRANTED &&
-            permissions[2] == Car.PERMISSION_POWERTRAIN && grantResults[2] == PackageManager.PERMISSION_GRANTED &&
-            permissions[3] == Car.PERMISSION_CAR_INFO && grantResults[3] == PackageManager.PERMISSION_GRANTED &&
-            permissions[4] == Car.PERMISSION_EXTERIOR_ENVIRONMENT && grantResults[4] == PackageManager.PERMISSION_GRANTED &&
-            permissions[5] == Car.PERMISSION_ENERGY_PORTS && grantResults[5] == PackageManager.PERMISSION_GRANTED
-
-        ) {
+        var allGranted = true
+        for(element in grantResults){
+            if(element != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(Constant.permissions, 0)
+                allGranted = false
+                break
+            }
+        }
+        if(allGranted){
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
