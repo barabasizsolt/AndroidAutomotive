@@ -116,14 +116,14 @@ class BenchmarkTabFragment : Fragment() {
 
         runningComputation = CoroutineScope(Dispatchers.Default).launch {
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                progressBarInfo.text = Constant.job1Message
+                progressBarInfo.text = Constant.JOB1_MESSAGE
             }
             time1 = measureTimeMillis {
                 Benchmark.primalityTest()
             }
             Log.d("Job1", "primality test done")
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                progressBarInfo.text = Constant.job2Message
+                progressBarInfo.text = Constant.JOB2_MESSAGE
             }
             time2 = measureTimeMillis {
                 Benchmark.factorialCalculation()
@@ -131,7 +131,7 @@ class BenchmarkTabFragment : Fragment() {
             Log.d("Job2", "factorial calculation done")
 
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                progressBarInfo.text = Constant.job3Message
+                progressBarInfo.text = Constant.JOB3_MESSAGE
             }
             time3 = measureTimeMillis {
                 Benchmark.sorting()
@@ -139,7 +139,7 @@ class BenchmarkTabFragment : Fragment() {
             Log.d("Job3", "list sorting done")
 
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
-                progressBarInfo.text = Constant.job4Message
+                progressBarInfo.text = Constant.JOB4_MESSAGE
             }
             time4 = measureTimeMillis {
                 Benchmark.matrixMultiplication()

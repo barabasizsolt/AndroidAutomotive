@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Zsolt/Documents/GitHub/AndroidAutomotive/mobile/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2643229166666667" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/drawable/ic_fuel.xml" value="0.536" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/drawable/ic_information.xml" value="0.3795572916666667" />
@@ -23,7 +22,7 @@
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_car_info_tab.xml" value="0.6" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_car_sensors.xml" value="0.32610544217687076" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_car_sensors_tab.xml" value="0.4" />
-        <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_fuel.xml" value="0.4" />
+        <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_fuel.xml" value="0.8" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/fragment_speed.xml" value="0.3715986394557823" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/layout/recycler_view_item.xml" value="0.6" />
         <entry key="..\:/Users/barabasi.r.zsolt/AndroidStudioProjects/PolestarInfo/mobile/src/main/res/menu/bottom_navigation_menu.xml" value="0.536" />

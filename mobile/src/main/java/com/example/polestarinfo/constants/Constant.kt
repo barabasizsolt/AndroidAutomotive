@@ -85,10 +85,12 @@ object Constant {
     private const val BENCHMARK_RESULT_DIALOG_HEIGHT = 700
     const val DELETE_DIALOG_WIDTH = 900
     const val DELETE_DIALOG_HEIGHT = 350
-    const val job1Message = "Running primality test..."
-    const val job2Message = "Running factorial calculation..."
-    const val job3Message = "Running list sorting..."
-    const val job4Message = "Running matrix multiplication..."
+    const val JOB1_MESSAGE = "Running primality test..."
+    const val JOB2_MESSAGE = "Running factorial calculation..."
+    const val JOB3_MESSAGE = "Running list sorting..."
+    const val JOB4_MESSAGE = "Running matrix multiplication..."
+    const val BATTERY_LOW_PERCENTAGE = 20
+    const val BATTERY_FULL_PERCENTAGE = 100
 
     fun showResultDialog(score: Score, context: Context){
         val totalScore = "Total time: " + score.score + " ms"

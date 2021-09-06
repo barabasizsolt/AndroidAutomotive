@@ -16,6 +16,8 @@ import android.widget.Toast
 import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
+import com.example.polestarinfo.constants.Constant.BATTERY_FULL_PERCENTAGE
+import com.example.polestarinfo.constants.Constant.BATTERY_LOW_PERCENTAGE
 import com.example.polestarinfo.constants.Constant.CHARGE
 import com.example.polestarinfo.constants.Constant.MW_TO_KW
 import com.example.polestarinfo.constants.Constant.M_TO_MI
@@ -37,6 +39,7 @@ class FuelFragment : Fragment() {
 
     private var wasCharging: Boolean = false
     private var isCharging: Boolean = false
+    private var batteryPercentageValue: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,6 +92,11 @@ class FuelFragment : Fragment() {
             CarPropertyManager.SENSOR_RATE_FASTEST
         )
         mCarPropertyManager.registerCallback(
+            energyPortConnectedCallback,
+            VehiclePropertyIds.EV_CHARGE_PORT_CONNECTED,
+            CarPropertyManager.SENSOR_RATE_FASTEST
+        )
+        mCarPropertyManager.registerCallback(
             chargeRateCallback,
             VehiclePropertyIds.EV_BATTERY_INSTANTANEOUS_CHARGE_RATE,
             CarPropertyManager.SENSOR_RATE_FASTEST
@@ -98,20 +106,15 @@ class FuelFragment : Fragment() {
             VehiclePropertyIds.ENV_OUTSIDE_TEMPERATURE,
             CarPropertyManager.SENSOR_RATE_FASTEST
         )
-        mCarPropertyManager.registerCallback(
-            energyPortConnectedCallback,
-            VehiclePropertyIds.EV_CHARGE_PORT_CONNECTED,
-            CarPropertyManager.SENSOR_RATE_FASTEST
-        )
     }
 
     private fun unregisterCarPropertyCallback() {
         mCarPropertyManager.unregisterCallback(batteryCallback)
         mCarPropertyManager.unregisterCallback(batteryCapacityCallback)
         mCarPropertyManager.unregisterCallback(rangeCallback)
+        mCarPropertyManager.unregisterCallback(energyPortConnectedCallback)
         mCarPropertyManager.unregisterCallback(chargeRateCallback)
         mCarPropertyManager.unregisterCallback(temperatureCallback)
-        mCarPropertyManager.unregisterCallback(energyPortConnectedCallback)
     }
 
     private fun calculateBatteryPercentage(value: Float) = (value * 100) / Constant.MAX_WH
@@ -134,7 +137,7 @@ class FuelFragment : Fragment() {
                 isCharging = false
 
                 polestar.setImageResource(R.drawable.polestar2_top_view)
-                batteryIcon.setImageResource(R.drawable.ic_baseline_battery_full_24)
+                checkBatteryStatus()
                 odometerAndChargeHeader.text = ODOMETER
                 // NOTE: Odometer is not available.
                 odometerAndCharge.text = ODOMETER_DEFAULT_VAL
@@ -146,9 +149,21 @@ class FuelFragment : Fragment() {
         }
     }
 
+    private fun checkBatteryStatus(){
+        if(!isCharging) {
+            when {
+                batteryPercentageValue < BATTERY_LOW_PERCENTAGE -> batteryIcon.setImageResource(R.drawable.ic_battery_status_low)
+                batteryPercentageValue < BATTERY_FULL_PERCENTAGE -> batteryIcon.setImageResource(R.drawable.ic_battery_status_medium)
+                else -> batteryIcon.setImageResource(R.drawable.ic_battery_status_full)
+            }
+        }
+    }
+
     private val batteryCallback = object :  CarPropertyManager.CarPropertyEventCallback {
         override fun onChangeEvent(carPropertyValue: CarPropertyValue<*>) {
             val batteryLevel = calculateBatteryPercentage(carPropertyValue.value as Float)
+            batteryPercentageValue = batteryLevel.roundToInt()
+            checkBatteryStatus()
             val batteryLevelText = batteryLevel.roundToInt().toString() + " %"
             batteryPercentage.text = batteryLevelText
         }

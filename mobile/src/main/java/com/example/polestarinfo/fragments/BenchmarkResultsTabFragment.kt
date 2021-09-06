@@ -26,7 +26,7 @@ class BenchmarkResultsTabFragment : Fragment(), OnItemClickListener, OnItemLongC
     ): View? {
         val view = inflater.inflate(R.layout.fragment_benchmark_results_tab, container, false)
 
-        scoresList.sortBy { it.name }
+        scoresList.sortByDescending { it.name }
 
         val recyclerview = view.findViewById<RecyclerView>(R.id.benchmark_recyclerview)
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
