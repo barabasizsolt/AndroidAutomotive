@@ -11,4 +11,7 @@
     <string name="benchmark_delete_dialog_positive_button">Delete</string>
     <string name="speedometer_is_not_available">Speedometer is not available</string>
     <string name="gear">Gear</string>
+    <string name="battery_level">Battery level</string>
+    <string name="battery_capacity">Battery capacity</string>
+    <string name="range">Range</string>
 </resources>

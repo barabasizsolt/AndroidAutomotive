@@ -15,4 +15,7 @@
     <!--    Speedometer colors-->
     <color name="speedometer_border_color">#402c47</color>
     <color name="speedometer_fill_color">#AD1D45</color>
+
+    <!--    Sensor header text color-->
+    <color name="sensor_header_text_color">#FFC947</color>
 </resources>
