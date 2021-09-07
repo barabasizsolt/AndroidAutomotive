@@ -21,5 +21,10 @@
     <string name="model_year">Model Year</string>
     <string name="driver_seat_location">Driver Seat Location</string>
     <string name="fuel_door_location">Fuel door location</string>
-    <string name="running">Running...</string>
+    <string name="running">Running…</string>
+    <string name="benchmark_score">Benchmark score:</string>
+    <string name="benchmark_name">Benchmark name:</string>
+    <string name="sensor_name">Sensor name:</string>
+    <string name="vendor">Vendor:</string>
+    <string name="tab_layout_icon">tab_layout_icon</string>
 </resources>

@@ -84,4 +84,28 @@
     <dimen name="progress_indicator_marginTop">30dp</dimen>
     <dimen name="progress_info_textSize">35sp</dimen>
     <dimen name="progress_info_marginTop">20dp</dimen>
+
+    <!--Benchmark result recycler view layout dimens-->
+    <dimen name="benchmark_result_recycler_view_layout_height">110dp</dimen>
+    <dimen name="benchmark_result_recycler_view_layout_margin">10dp</dimen>
+    <dimen name="benchmark_result_recycler_view_card_elevation">6dp</dimen>
+    <dimen name="recycler_view_inner_layout_padding">5dp</dimen>
+    <dimen name="benchmark_score_textSize">35sp</dimen>
+    <dimen name="benchmark_score_marginTop">4dp</dimen>
+    <dimen name="benchmark_name_textSize">30sp</dimen>
+    <dimen name="benchmark_name_marginTop">6dp</dimen>
+
+    <!--Custom tab layout dimens-->
+    <dimen name="custom_tab_layout_imageview_size">60dp</dimen>
+    <dimen name="custom_tab_layout_textview_marginTop">90dp</dimen>
+    <dimen name="custom_tab_layout_textview_textSize">30sp</dimen>
+
+    <!--Sensors recycler view layout dimens-->
+    <dimen name="sensors_recycler_view_layout_height">105dp</dimen>
+    <dimen name="sensors_recycler_view_layout_margin">12dp</dimen>
+    <dimen name="sensors_recycler_view_card_elevation">6dp</dimen>
+    <dimen name="sensor_name_textSize">30sp</dimen>
+    <dimen name="sensor_name_marginTop">8dp</dimen>
+    <dimen name="vendor_name_textSize">25sp</dimen>
+    <dimen name="vendor_name_marginTop">8dp</dimen>
 </resources>

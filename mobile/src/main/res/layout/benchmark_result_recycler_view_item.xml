@@ -3,35 +3,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
-    android:layout_margin="10dp"
-    app:cardElevation="6dp">
+    android:layout_height="@dimen/benchmark_result_recycler_view_layout_height"
+    android:layout_margin="@dimen/benchmark_result_recycler_view_layout_margin"
+    app:cardElevation="@dimen/benchmark_result_recycler_view_card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="#525252"
-        android:padding="5dp">
+        android:background="@color/recycler_view_inner_layout_background"
+        android:padding="@dimen/recycler_view_inner_layout_padding">
 
         <TextView
             android:id="@+id/benchmark_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Benchmark score: "
-            android:textColor="#f5f5f5"
-            android:layout_marginTop="4dp"
-            android:textSize="35sp"/>
+            android:text="@string/benchmark_score"
+            android:textColor="@color/application_text_color"
+            android:layout_marginTop="@dimen/benchmark_score_marginTop"
+            android:textSize="@dimen/benchmark_score_textSize"/>
 
         <TextView
             android:id="@+id/benchmark_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Benchmark name: "
-            android:textColor="#f5f5f5"
-            android:layout_marginTop="6dp"
-            android:textSize="30sp" />
+            android:text="@string/benchmark_name"
+            android:textColor="@color/application_text_color"
+            android:layout_marginTop="@dimen/benchmark_name_marginTop"
+            android:textSize="@dimen/benchmark_name_textSize" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
