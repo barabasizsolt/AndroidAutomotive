@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#151515"
+    android:background="@color/application_background_color"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".fragments.CarInfoFragment">
 
     <ImageView
         android:id="@+id/polestar2"
-        android:layout_width="800dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="280dp"
+        android:layout_width="@dimen/polestar2_side_width"
+        android:layout_height="@dimen/polestar2_side_height"
+        android:layout_marginTop="@dimen/polestar2_side_marginTop"
         android:src="@drawable/polestar_2_side_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -29,28 +29,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabMinWidth="460dp"
-        app:tabPaddingStart="10dp"
-        app:tabPaddingEnd="10dp"
+        app:tabMinWidth="@dimen/tab_layout_min_width"
+        app:tabPaddingStart="@dimen/tab_layout_padding"
+        app:tabPaddingEnd="@dimen/tab_layout_padding"
         app:tabMode="fixed">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:icon="@drawable/ic_information"
-            android:text="Car info" />
+            android:text="@string/car_info" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_microchip"
-            android:text="Car Sensors" />
+            android:text="@string/car_sensors" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/car_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="830dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="@dimen/car_info_fragment_container_height"
+        android:layout_marginTop="@dimen/car_info_fragment_container_margin"
+        android:layout_marginBottom="@dimen/car_info_fragment_container_margin"/>
 </LinearLayout>

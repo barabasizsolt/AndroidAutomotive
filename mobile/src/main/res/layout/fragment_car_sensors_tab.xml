@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="@dimen/car_sensor_fragment_layout_height"
     android:gravity="center_horizontal"
-    android:background="#222222"
+    android:background="@color/car_info_tab_fragment_background"
     tools:context=".fragments.CarSensorsTabFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,5 +12,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/recycler_view_item" />
-
 </LinearLayout>

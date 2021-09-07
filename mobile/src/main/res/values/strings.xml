@@ -14,4 +14,12 @@
     <string name="battery_level">Battery level</string>
     <string name="battery_capacity">Battery capacity</string>
     <string name="range">Range</string>
+    <string name="car_info">Car info</string>
+    <string name="car_sensors">Car Sensors</string>
+    <string name="make">Make</string>
+    <string name="model">Model</string>
+    <string name="model_year">Model Year</string>
+    <string name="driver_seat_location">Driver Seat Location</string>
+    <string name="fuel_door_location">Fuel door location</string>
+    <string name="running">Running...</string>
 </resources>

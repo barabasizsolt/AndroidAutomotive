@@ -7,18 +7,18 @@
     android:layout_height="400dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#222222"
+    android:background="@color/car_info_tab_fragment_background"
     tools:context=".fragments.CarInfoTabFragment">
 
     <TextView
         android:id="@+id/make"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/make"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/text_view_textSize"
+        android:layout_marginTop="@dimen/text_view_margin"
+        android:layout_marginBottom="@dimen/text_view_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,21 +27,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/car_info_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/car_info_view_margin"
+        android:layout_marginEnd="@dimen/car_info_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Model"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/model"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/text_view_textSize"
+        android:layout_marginTop="@dimen/text_view_margin"
+        android:layout_marginBottom="@dimen/text_view_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,21 +50,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/car_info_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/car_info_view_margin"
+        android:layout_marginEnd="@dimen/car_info_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/model_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Model Year"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/model_year"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/text_view_textSize"
+        android:layout_marginTop="@dimen/text_view_margin"
+        android:layout_marginBottom="@dimen/text_view_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,21 +73,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/car_info_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/car_info_view_margin"
+        android:layout_marginEnd="@dimen/car_info_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/driver_seat_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Driver Seat Location"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/driver_seat_location"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/text_view_textSize"
+        android:layout_marginTop="@dimen/text_view_margin"
+        android:layout_marginBottom="@dimen/text_view_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,20 +96,20 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/car_info_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/car_info_view_margin"
+        android:layout_marginEnd="@dimen/car_info_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/fuel_door_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fuel door location"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
+        android:text="@string/fuel_door_location"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/text_view_textSize"
+        android:layout_marginTop="@dimen/text_view_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="900dp"
-    android:layout_height="600dp"
+    android:layout_width="@dimen/benchmark_custom_dialog_layout_width"
+    android:layout_height="@dimen/benchmark_custom_dialog_layout_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical">
@@ -9,17 +9,17 @@
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:indicatorSize="90dp"
-        android:layout_marginTop="30dp"
+        app:indicatorSize="@dimen/progress_indicator_size"
+        android:layout_marginTop="@dimen/progress_indicator_marginTop"
         android:indeterminate="true" />
 
     <TextView
         android:id="@+id/progress_bar_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:text="Running..."
-        android:layout_marginTop="20dp"
+        android:textSize="@dimen/progress_info_textSize"
+        android:text="@string/running"
+        android:layout_marginTop="@dimen/progress_info_marginTop"
         />
 
 </LinearLayout>

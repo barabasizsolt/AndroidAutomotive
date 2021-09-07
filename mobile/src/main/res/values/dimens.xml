@@ -58,4 +58,30 @@
     <dimen name="odometer_and_charge_header_width">165dp</dimen>
     <dimen name="odometer_and_charge_text_width">180dp</dimen>
     <dimen name="odometer_and_charge_text_height">70dp</dimen>
+
+    <!--CarInfoFragment dimens-->
+    <dimen name="polestar2_side_width">800dp</dimen>
+    <dimen name="polestar2_side_height">300dp</dimen>
+    <dimen name="polestar2_side_marginTop">280dp</dimen>
+    <dimen name="tab_layout_min_width">460dp</dimen>
+    <dimen name="tab_layout_padding">10dp</dimen>
+    <dimen name="car_info_fragment_container_height">830dp</dimen>
+    <dimen name="car_info_fragment_container_margin">20dp</dimen>
+
+    <!--CarInfoTabFragment dimens-->
+    <dimen name="text_view_textSize">35sp</dimen>
+    <dimen name="text_view_margin">15dp</dimen>
+    <dimen name="car_info_view_height">3dp</dimen>
+    <dimen name="car_info_view_margin">40dp</dimen>
+
+    <!--CarInfoSensorsFragment dimens-->
+    <dimen name="car_sensor_fragment_layout_height">400dp</dimen>
+
+    <!--Benchmark custom dialog layout dimens-->
+    <dimen name="benchmark_custom_dialog_layout_width">900dp</dimen>
+    <dimen name="benchmark_custom_dialog_layout_height">600dp</dimen>
+    <dimen name="progress_indicator_size">90dp</dimen>
+    <dimen name="progress_indicator_marginTop">30dp</dimen>
+    <dimen name="progress_info_textSize">35sp</dimen>
+    <dimen name="progress_info_marginTop">20dp</dimen>
 </resources>

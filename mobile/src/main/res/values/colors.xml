@@ -18,4 +18,7 @@
 
     <!--    Sensor header text color-->
     <color name="sensor_header_text_color">#FFC947</color>
+
+<!--    CarInfoTab Fragment background color-->
+    <color name="car_info_tab_fragment_background">#222222</color>
 </resources>
