@@ -1,6 +1,6 @@
 package com.example.polestarinfo.cache
 
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 
 object Cache {
     private var scores = mutableListOf<Score>()

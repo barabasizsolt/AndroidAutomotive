@@ -1,7 +1,6 @@
-package com.example.polestarinfo.model
+package com.example.polestarinfo.models
 
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 
 @Entity(tableName = "score_table", primaryKeys = ["score", "name"])
 data class Score(

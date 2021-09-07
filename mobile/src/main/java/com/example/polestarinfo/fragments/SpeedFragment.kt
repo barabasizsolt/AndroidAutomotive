@@ -17,7 +17,6 @@ import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
 import com.example.polestarinfo.constants.Constant
 import me.ibrahimsn.lib.Speedometer
-import kotlin.math.roundToInt
 
 class SpeedFragment : Fragment() {
     private lateinit var mCarPropertyManager:CarPropertyManager
@@ -102,7 +101,7 @@ class SpeedFragment : Fragment() {
                 speedometer.visibility = View.INVISIBLE
                 gear.visibility = View.INVISIBLE
                 chargeMessage.visibility = View.VISIBLE
-                Toast.makeText(requireContext(), "Charging!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), Constant.CHARGING_MESSAGE, Toast.LENGTH_SHORT).show()
             }
             else -> {
                 speedometer.visibility = View.VISIBLE

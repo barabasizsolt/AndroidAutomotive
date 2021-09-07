@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#151515"
+    android:background="@color/application_background_color"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".activities.SplashActivity">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="800dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/splash_activity_logo_width"
+        android:layout_height="@dimen/splash_activity_logo_height"
         android:src="@drawable/polestar_logo" />
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="800dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="@dimen/splash_activity_icon_width"
+        android:layout_height="@dimen/splash_activity_icon_height"
+        android:layout_marginTop="@dimen/splash_activity_icon_marginTop"
         android:src="@drawable/polestar_icon" />
 
 </RelativeLayout>

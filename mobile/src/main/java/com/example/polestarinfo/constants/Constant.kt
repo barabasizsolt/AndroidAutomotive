@@ -4,7 +4,7 @@ import android.car.Car
 import android.content.Context
 import android.hardware.Sensor
 import com.example.polestarinfo.R
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 object Constant {
@@ -30,22 +30,6 @@ object Constant {
         1024 to "Seventh Gear",
         2048 to "Eighth Gear",
         4096 to "Ninth Gear"
-    )
-
-    val fuelList = mapOf(
-        0 to "Unknown",
-        1 to "Unleaded",
-        2 to "Leaded gasoline",
-        3 to "1 Grade Diesel",
-        4 to "2 Grade Diesel",
-        5 to "Biodiesel",
-        6 to "E85",
-        7 to "LPG",
-        8 to "CNG",
-        9 to "LNG",
-        10 to "Electric",
-        11 to "Hydrogen",
-        12 to "Other"
     )
 
     val seatLocations = mapOf(
@@ -91,6 +75,8 @@ object Constant {
     const val JOB4_MESSAGE = "Running matrix multiplication..."
     const val BATTERY_LOW_PERCENTAGE = 20
     const val BATTERY_FULL_PERCENTAGE = 100
+    const val CHARGING_MESSAGE = "Charging!"
+    const val CHARGING_FINISHED_MESSAGE = "Charging finished!"
 
     fun showResultDialog(score: Score, context: Context){
         val totalScore = "Total time: " + score.score + " ms"
@@ -129,6 +115,6 @@ object Constant {
                 dialog.dismiss()
             }
             .show()
-            .window!!.setLayout(Constant.SENSOR_DIALOG_WIDTH, Constant.SENSOR_DIALOG_HEIGHT)
+            .window!!.setLayout(SENSOR_DIALOG_WIDTH, SENSOR_DIALOG_HEIGHT)
     }
 }

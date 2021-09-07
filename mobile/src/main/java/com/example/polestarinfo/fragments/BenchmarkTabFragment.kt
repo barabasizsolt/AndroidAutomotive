@@ -1,10 +1,8 @@
 package com.example.polestarinfo.fragments
 
-
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +13,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.example.polestarinfo.activities.MainActivity
 import com.example.polestarinfo.R
-import com.example.polestarinfo.benchmark.Benchmark
+import com.example.polestarinfo.benchmarks.Benchmark
 import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
@@ -76,7 +74,6 @@ class BenchmarkTabFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //Benchmark dialog
         benchmarkDialog = MaterialAlertDialogBuilder(view.context, R.style.AlertDialogTheme)
             .setView(customDialogView)
             .setTitle(R.string.benchmark_dialog_title)
@@ -121,14 +118,13 @@ class BenchmarkTabFragment : Fragment() {
             time1 = measureTimeMillis {
                 Benchmark.primalityTest()
             }
-            Log.d("Job1", "primality test done")
+
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
                 progressBarInfo.text = Constant.JOB2_MESSAGE
             }
             time2 = measureTimeMillis {
                 Benchmark.factorialCalculation()
             }
-            Log.d("Job2", "factorial calculation done")
 
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
                 progressBarInfo.text = Constant.JOB3_MESSAGE
@@ -136,7 +132,6 @@ class BenchmarkTabFragment : Fragment() {
             time3 = measureTimeMillis {
                 Benchmark.sorting()
             }
-            Log.d("Job3", "list sorting done")
 
             progressMessage = CoroutineScope(Dispatchers.Main).launch {
                 progressBarInfo.text = Constant.JOB4_MESSAGE
@@ -144,7 +139,6 @@ class BenchmarkTabFragment : Fragment() {
             time4 = measureTimeMillis {
                 Benchmark.matrixMultiplication()
             }
-            Log.d("Job4", "matrix multiplication done")
         }
         runningComputation.join()
 

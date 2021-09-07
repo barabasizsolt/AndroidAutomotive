@@ -1,7 +1,6 @@
 package com.example.polestarinfo.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,7 @@ import com.example.polestarinfo.cache.Cache
 import com.example.polestarinfo.constants.Constant
 import com.example.polestarinfo.interfaces.OnItemClickListener
 import com.example.polestarinfo.interfaces.OnItemLongClickListener
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class BenchmarkResultsTabFragment : Fragment(), OnItemClickListener, OnItemLongClickListener {

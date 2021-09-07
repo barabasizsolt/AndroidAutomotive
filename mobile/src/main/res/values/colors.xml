@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    Application main colors-->
+    <color name="application_background_color">#151515</color>
+    <color name="application_text_color">#f5f5f5</color>
+
+    <!--    Speedometer colors-->
+    <color name="speedometer_border_color">#402c47</color>
+    <color name="speedometer_fill_color">#AD1D45</color>
 </resources>

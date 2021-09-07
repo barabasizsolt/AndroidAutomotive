@@ -1,7 +1,6 @@
 package com.example.polestarinfo.activities
 
 import android.annotation.SuppressLint
-import android.car.Car
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity

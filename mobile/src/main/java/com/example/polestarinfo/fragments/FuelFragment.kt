@@ -131,7 +131,7 @@ class FuelFragment : Fragment() {
                 val currentCharge = mCarPropertyManager.getFloatProperty(VehiclePropertyIds.EV_BATTERY_INSTANTANEOUS_CHARGE_RATE, 0)
                 val charge = (currentCharge / MW_TO_KW).roundToInt().toString() + " kW"
                 odometerAndCharge.text = charge
-                Toast.makeText(requireContext(), "Charging!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), Constant.CHARGING_MESSAGE, Toast.LENGTH_SHORT).show()
             }
             else -> {
                 isCharging = false
@@ -139,11 +139,9 @@ class FuelFragment : Fragment() {
                 polestar.setImageResource(R.drawable.polestar2_top_view)
                 checkBatteryStatus()
                 odometerAndChargeHeader.text = ODOMETER
-                // NOTE: Odometer is not available.
                 odometerAndCharge.text = ODOMETER_DEFAULT_VAL
                 if(wasCharging) {
-                    Toast.makeText(requireContext(), "Charging finished!", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(requireContext(), Constant.CHARGING_FINISHED_MESSAGE, Toast.LENGTH_SHORT).show()
                 }
             }
         }

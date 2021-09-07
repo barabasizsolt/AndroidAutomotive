@@ -5,53 +5,53 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="bottom"
-    android:background="#151515"
+    android:background="@color/application_background_color"
     tools:context=".fragments.SpeedFragment">
 
     <TextView
         android:id="@+id/charging_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#f5f5f5"
+        android:textColor="@color/application_text_color"
         android:textAlignment="center"
-        android:text="Speedometer is not available"
+        android:text="@string/speedometer_is_not_available"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="@dimen/charging_message_marginTop"
         android:visibility="invisible"
-        android:textSize="45sp"
+        android:textSize="@dimen/charging_message_textSize"
         />
 
     <me.ibrahimsn.lib.Speedometer
         android:id="@+id/speedometer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="130dp"
-        app:borderColor="#402c47"
-        app:borderSize="8dp"
-        app:fillColor="#AD1D45"
+        android:layout_marginLeft="@dimen/speedometer_margin_left_right"
+        android:layout_marginRight="@dimen/speedometer_margin_left_right"
+        android:layout_marginBottom="@dimen/speedometer_marginTop"
+        app:borderColor="@color/speedometer_border_color"
+        app:borderSize="@dimen/speedometer_borderSize"
+        app:fillColor="@color/speedometer_fill_color"
         app:layout_constraintTop_toTopOf="parent"
         app:maxSpeed="250"
         app:metricText="km/h"
-        app:textColor="#f5f5f5"
+        app:textColor="@color/application_text_color"
         tools:layout_editor_absoluteX="150dp" />
 
     <ImageView
         android:id="@+id/parking_brake"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginStart="230dp"
+        android:layout_width="@dimen/parking_brake_size"
+        android:layout_height="@dimen/parking_brake_size"
+        android:layout_marginTop="@dimen/parking_brake_marginTop"
+        android:layout_marginStart="@dimen/parking_brake_marginStart"
         android:visibility="invisible"
         android:src="@drawable/ic_brake" />
 
     <ImageView
         android:id="@+id/low_fuel"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="720dp"
-        android:layout_marginTop="330dp"
+        android:layout_width="@dimen/low_fuel_size"
+        android:layout_height="@dimen/low_fuel_size"
+        android:layout_marginStart="@dimen/low_fuel_marginStart"
+        android:layout_marginTop="@dimen/low_fuel_marginTop"
         android:src="@drawable/ic_fuel_low"
         android:visibility="invisible" />
 
@@ -59,11 +59,11 @@
         android:id="@+id/gear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="730dp"
+        android:layout_marginTop="@dimen/gear_marginTop"
         android:layout_centerHorizontal="true"
-        android:text="Gear"
+        android:text="@string/gear"
         android:textAlignment="center"
-        android:textColor="#f5f5f5"
-        android:textSize="50sp" />
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/gear_textSize" />
 
 </RelativeLayout>

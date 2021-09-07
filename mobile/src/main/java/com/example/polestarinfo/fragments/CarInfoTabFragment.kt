@@ -21,7 +21,6 @@ class CarInfoTabFragment : Fragment() {
     private lateinit var driverSeatLocationText: TextView
     private lateinit var fuelDoorLocationText: TextView
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

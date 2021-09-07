@@ -3,7 +3,7 @@ package com.example.polestarinfo.databases
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

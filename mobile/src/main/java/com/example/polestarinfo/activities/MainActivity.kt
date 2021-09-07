@@ -2,23 +2,17 @@ package com.example.polestarinfo.activities
 
 import android.car.Car
 import android.car.hardware.property.CarPropertyManager
-import android.content.pm.PackageManager
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.polestarinfo.R
-import com.example.polestarinfo.constants.Constant.permissions
 import com.example.polestarinfo.databases.ScoreViewModel
 import com.example.polestarinfo.fragments.BenchmarkFragment
 import com.example.polestarinfo.fragments.CarInfoFragment
 import com.example.polestarinfo.fragments.FuelFragment
 import com.example.polestarinfo.fragments.SpeedFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import androidx.appcompat.app.AppCompatDelegate
-
 
 class MainActivity : AppCompatActivity() {
 

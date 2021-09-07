@@ -1,6 +1,5 @@
 package com.example.polestarinfo.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.polestarinfo.R
 import com.example.polestarinfo.interfaces.OnItemClickListener
 import com.example.polestarinfo.interfaces.OnItemLongClickListener
-import com.example.polestarinfo.model.Score
+import com.example.polestarinfo.models.Score
 
 class BenchmarkAdapter (private val mList: MutableList<Score>, onItemClickListener: OnItemClickListener, onItemLongClickListener: OnItemLongClickListener)
     : RecyclerView.Adapter<BenchmarkAdapter.ViewHolder>() {

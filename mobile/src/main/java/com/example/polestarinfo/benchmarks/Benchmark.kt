@@ -1,4 +1,4 @@
-package com.example.polestarinfo.benchmark
+package com.example.polestarinfo.benchmarks
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

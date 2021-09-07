@@ -1,17 +1,13 @@
 package com.example.polestarinfo.adapters
 
 import android.hardware.Sensor
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.polestarinfo.R
-import com.example.polestarinfo.constants.Constant
 import com.example.polestarinfo.interfaces.OnItemClickListener
-import com.example.polestarinfo.interfaces.OnItemLongClickListener
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class SensorAdapter (private val mList: List<Sensor>, onItemClickListener: OnItemClickListener)
     : RecyclerView.Adapter<SensorAdapter.ViewHolder>() {
