@@ -27,4 +27,13 @@
     <string name="sensor_name">Sensor name:</string>
     <string name="vendor">Vendor:</string>
     <string name="tab_layout_icon">tab_layout_icon</string>
+    <string name="cpu_benchmark">CPU Benchmark</string>
+    <string name="results_history">Results history</string>
+    <string name="build_info">BUILD INFO</string>
+    <string name="id">ID</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="sdk">SDK</string>
+    <string name="board">Board</string>
+    <string name="hardware">Hardware</string>
+    <string name="run_cpu_benchmark">Run CPU Benchmark</string>
 </resources>

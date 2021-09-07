@@ -108,4 +108,29 @@
     <dimen name="sensor_name_marginTop">8dp</dimen>
     <dimen name="vendor_name_textSize">25sp</dimen>
     <dimen name="vendor_name_marginTop">8dp</dimen>
+
+    <!--BenchmarkFragment dimens-->
+    <dimen name="benchmark_tab_layout_marginTop">300dp</dimen>
+    <dimen name="benchmark_tab_layout_minWidth">550dp</dimen>
+    <dimen name="benchmark_tab_layout_padding">20dp</dimen>
+    <dimen name="benchmark_tab_fragment_container_height">1130dp</dimen>
+    <dimen name="benchmark_tab_fragment_container_margin">20dp</dimen>
+
+    <!--BenchmarkTabFragment dimens-->
+    <dimen name="build_info_text_Size">40sp</dimen>
+    <dimen name="build_info_marginTop">30dp</dimen>
+    <dimen name="benchmark_tab_textview_margin">15dp</dimen>
+    <dimen name="benchmark_tab_textview_marginTop">50dp</dimen>
+    <dimen name="benchmark_tab_textview_textSize">35sp</dimen>
+    <dimen name="benchmark_tab_view_height">3dp</dimen>
+    <dimen name="benchmark_tab_view_margin">40dp</dimen>
+    <dimen name="benchmark_tab_button_marginTop">40dp</dimen>
+    <dimen name="benchmark_tab_button_margin">250dp</dimen>
+    <dimen name="benchmark_tab_button_padding">15dp</dimen>
+    <dimen name="benchmark_tab_button_textSize">30sp</dimen>
+
+    <!--BenchmarkResultFragment dimens-->
+    <dimen name="benchmark_result_tab_layout_height">700dp</dimen>
+    <dimen name="benchmark_result_recycler_view_paddingBottom">20dp</dimen>
+    <dimen name="benchmark_result_recycler_view_paddingTop">5dp</dimen>
 </resources>

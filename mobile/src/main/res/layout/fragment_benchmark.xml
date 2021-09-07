@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#151515"
+    android:background="@color/application_background_color"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".fragments.BenchmarkFragment">
@@ -17,30 +17,30 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="300dp"
-        app:tabMinWidth="550dp"
-        app:tabPaddingStart="20dp"
-        app:tabPaddingEnd="20dp"
+        android:layout_marginTop="@dimen/benchmark_tab_layout_marginTop"
+        app:tabMinWidth="@dimen/benchmark_tab_layout_minWidth"
+        app:tabPaddingStart="@dimen/benchmark_tab_layout_padding"
+        app:tabPaddingEnd="@dimen/benchmark_tab_layout_padding"
         app:tabMode="fixed">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:icon="@drawable/ic_cpu"
-            android:text="CPU Benchmark" />
+            android:text="@string/cpu_benchmark" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_research"
-            android:text="Results history" />
+            android:text="@string/results_history" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/benchmark_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="1130dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="@dimen/benchmark_tab_fragment_container_height"
+        android:layout_marginTop="@dimen/benchmark_tab_fragment_container_margin"
+        android:layout_marginBottom="@dimen/benchmark_tab_fragment_container_margin"/>
 
 </LinearLayout>

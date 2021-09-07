@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="700dp"
+    android:layout_height="@dimen/benchmark_result_tab_layout_height"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#222222"
+    android:background="@color/application_background_color"
     tools:context=".fragments.BenchmarkResultsTabFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/benchmark_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="20dp"
-        android:paddingTop="5dp"
+        android:paddingBottom="@dimen/benchmark_result_recycler_view_paddingBottom"
+        android:paddingTop="@dimen/benchmark_result_recycler_view_paddingTop"
         tools:listitem="@layout/benchmark_result_recycler_view_item" />
 
 </LinearLayout>

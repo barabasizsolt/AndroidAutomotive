@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="700dp"
+    android:layout_height="@dimen/benchmark_result_tab_layout_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#222222"
+    android:background="@color/application_background_color"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".fragments.BenchmarkTabFragment">
@@ -12,22 +12,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="40sp"
-        android:textColor="#f5f5f5"
+        android:layout_marginTop="@dimen/build_info_marginTop"
+        android:textSize="@dimen/build_info_text_Size"
+        android:textColor="@color/application_text_color"
         android:textStyle="bold"
-        android:text="BUILD INFO"
+        android:text="@string/build_info"
         />
 
     <TextView
         android:id="@+id/build_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/id"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/benchmark_tab_textview_textSize"
+        android:layout_marginTop="@dimen/benchmark_tab_textview_marginTop"
+        android:layout_marginBottom="@dimen/benchmark_tab_textview_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,21 +36,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/benchmark_tab_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/benchmark_tab_view_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/manufacturer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manufacturer"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/manufacturer"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/benchmark_tab_textview_textSize"
+        android:layout_marginTop="@dimen/benchmark_tab_textview_margin"
+        android:layout_marginBottom="@dimen/benchmark_tab_textview_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,21 +59,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/benchmark_tab_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/benchmark_tab_view_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/sdk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SDK"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/sdk"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/benchmark_tab_textview_textSize"
+        android:layout_marginTop="@dimen/benchmark_tab_textview_margin"
+        android:layout_marginBottom="@dimen/benchmark_tab_textview_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,21 +82,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/benchmark_tab_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/benchmark_tab_view_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Board"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/board"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/benchmark_tab_textview_textSize"
+        android:layout_marginTop="@dimen/benchmark_tab_textview_margin"
+        android:layout_marginBottom="@dimen/benchmark_tab_textview_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,21 +105,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/benchmark_tab_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/benchmark_tab_view_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <TextView
         android:id="@+id/hardware"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hardware"
-        android:textColor="#f5f5f5"
-        android:textSize="35sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:text="@string/hardware"
+        android:textColor="@color/application_text_color"
+        android:textSize="@dimen/benchmark_tab_textview_textSize"
+        android:layout_marginTop="@dimen/benchmark_tab_textview_margin"
+        android:layout_marginBottom="@dimen/benchmark_tab_textview_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,22 +128,22 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="@dimen/benchmark_tab_view_height"
         android:backgroundTint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="@dimen/benchmark_tab_view_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_view_margin"
         android:background="?android:attr/dividerVertical" />
 
     <Button
         android:id="@+id/benchmark_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginEnd="250dp"
-        android:padding="15dp"
-        android:textSize="30sp"
-        android:text="Run CPU Benchmark"
+        android:layout_marginTop="@dimen/benchmark_tab_button_marginTop"
+        android:layout_marginStart="@dimen/benchmark_tab_button_margin"
+        android:layout_marginEnd="@dimen/benchmark_tab_button_margin"
+        android:padding="@dimen/benchmark_tab_button_padding"
+        android:textSize="@dimen/benchmark_tab_button_textSize"
+        android:text="@string/run_cpu_benchmark"
         />
 
 </LinearLayout>
