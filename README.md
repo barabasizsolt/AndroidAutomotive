@@ -66,13 +66,13 @@ The benchmark has four main part:
 The application is built around the **[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)** design principle.
  
 ## Screenshots
-<img src="https://serving.photos.photobox.com/8079941429052e91dcbf11d8cd3f4a25ff7b2ad569dd2b98dbae953af350bdc299c42cb8.jpg" width="510" height="540">
+<img src="https://github.com/barabasizsolt/AndroidAutomotive/blob/master/mobile/src/main/res/drawable-v24/speedometer.png" width="510" height="540">
 
 
-<img src="https://serving.photos.photobox.com/102845173a36e4673209a6d3ce89711ac2eab38cc1fc161c641f1741afceddd46b7638de.jpg" width="510" height="540">
+<img src="https://github.com/barabasizsolt/AndroidAutomotive/blob/master/mobile/src/main/res/drawable-v24/fuel.png" width="510" height="540">
 
 
-<img src="https://serving.photos.photobox.com/517087026c0168443d27f73dbf7213f5c8d796ca220db4a5e2d4603f34caeb331b3b5777.jpg" width="510" height="540">
+<img src="https://github.com/barabasizsolt/AndroidAutomotive/blob/master/mobile/src/main/res/drawable-v24/sensor.png" width="510" height="540">
 
 
-<img src="https://serving.photos.photobox.com/231777043613d3cae6714989220137c87f07f3f4ddcac5ffb2cc263a8e69fba3c2ecd2f6.jpg" width="510" height="540">
+<img src="https://github.com/barabasizsolt/AndroidAutomotive/blob/master/mobile/src/main/res/drawable-v24/benchmark.png" width="510" height="540">
