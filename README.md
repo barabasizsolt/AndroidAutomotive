@@ -1,6 +1,6 @@
 # Android Automotive application based on *[android.car](https://developer.android.com/reference/android/car/Car)* library
 
-The purpose of this application is to monitorize and visually represent the in-vehicle hardware and sensor changes.
+The purpose of this application is to monitorize and visually represent the in-vehicle sensor changes.
 
 ## Prerequisites
 
@@ -11,8 +11,15 @@ The purpose of this application is to monitorize and visually represent the in-v
 ## Note
 
     Currently the application is designed and built only for Polestar 2 Emulator.
-    In case of other AVD's the application won't work properly.
-    
+    In case of any other AVD's the application won't work properly.
+ 
+## Installation
+* Clone the repository into your local machine
+* Open the project using Android Studio
+* Build the project, after the build is completed the application will be installed on your avd
+
+      Before you build, make sure that the previously installed Polestar 2 AVD is selected
+ 
 ## Application details
 
 The application is built around four main component.
@@ -28,7 +35,7 @@ This component is responsible for every battery/energy based sensor and gives a 
 The above mentioned sensors are the following:
   * EV battery level (Wh) - the current charged status of the vehicle in percentage
   * Battery capacity (Wh) - the maximum battery capacity
-  * Range remaining (m) - the maximum ranged that could be traveled with the current charged status
+  * Range remaining (m) - the maximum range that could be traveled with the current charged status
   * Odometer (km) - total traveled distance with the vehicle
   * EV instantaneous charge rate sensor (mW) - the current charging rate
   * Outside temperature (°C)
@@ -36,11 +43,16 @@ The above mentioned sensors are the following:
   If the vehicle is charging the Odometer sensor is being replaced with the EV instantaneous charge rate sensor
   
 * **Vehicle info component**:
-It shows every information about the vehicle such (ex: *build id*, *model*, *built year*) and also list every in-vehicle car sensor (ex: *Goldfish 3-axis Gyroscope*)
+It shows every build information about the vehicle (ex: *build id*, *model*, *built year*) and also list every in-vehicle car sensor (ex: *Goldfish 3-axis Gyroscope*)
 
 * **Benchmark component**:
 This component basically is a mini CPU Benchmark application. 
-It was developed to test the CPU performance in different situations (ex: during low battery usage, after software update)
+It was developed to test the CPU performance in different scenarios (ex: during low battery usage, after software update) \
+The benchmark has four main part:
+    * Primality test on the first 20 million number
+    * Calculate factorial of the first 20.000 number
+    * Sorting a list with 400.000 element
+    * Multiplying two 800x800 matrices
   
 
 ## Used libraries and technologies
