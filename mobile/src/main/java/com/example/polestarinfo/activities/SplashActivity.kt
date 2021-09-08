@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity(), Animation.AnimationListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
 

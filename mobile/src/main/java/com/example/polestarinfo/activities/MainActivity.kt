@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var car : Car
     private lateinit var mCarPropertyManager: CarPropertyManager
 
-    lateinit var benchmarkScoreViewModel: ScoreViewModel
+    private lateinit var benchmarkScoreViewModel: ScoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,7 +86,6 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    fun getCar() = car
     fun getCarPropertyManager() = mCarPropertyManager
     fun getDatabase() = benchmarkScoreViewModel
 }

@@ -55,7 +55,7 @@ class BenchmarkTabFragment : Fragment() {
 
         val id = "Build id: " + Build.ID
         val manufacture = "Manufacturer: " + Build.MANUFACTURER
-        val sdk = "Sdk version: " + Build.VERSION.SDK
+        val sdk = "Sdk version: " + Build.VERSION.SDK_INT.toString()
         val board = "Board: " + Build.BOARD
         val hardware = "Hardware: " + Build.HARDWARE
 
