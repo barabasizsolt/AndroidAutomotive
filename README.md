@@ -1,6 +1,6 @@
 # Android Automotive application based on *[android.car](https://developer.android.com/reference/android/car/Car)* library
 
-The purpose of this application is to monitorize and visually represent the in-vehicle sensor changes.
+The purpose of this application is to monitorize and visually represent in-vehicle sensor changes.
 
 ## Prerequisites
 
